@@ -1,8 +1,9 @@
 from fastapi import FastAPI 
+import requests
 
 app = FastAPI()
 
-@app.get("/hotels")
-def get_hotels():
-    return "Hotel resort"
+@app.get("/hotels/{hotel_id}")
+def get_hotels(hotel_id: int, date_from, date_to):
+    return hotel_id, date_from, date_to
 
